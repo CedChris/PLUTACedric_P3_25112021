@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&family=Roboto&family=Shrikhand&display=swap');
+
+h1,h2{
+    font-family: 'Shrikhand';
+    margin: 0%;
+}
+h3{
+    font-family: 'Roboto';
+    font-weight: lighter;
+    margin: 0%;
+}
+body{
+    margin: 0%;
+}
+#logo{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 23%;
+    height: 60px;
+    width: 100%;
+        & i{
+            margin-left: 10px;
+        }
+}
+
+p{
+    margin: 0%;
+}
+#map{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: gainsboro;
+    box-shadow:rgb(161, 161, 161) 0 2px 2px 0px inset;
+        .map_icon{
+            color: rgb(43, 43, 43);
+            margin-right: 20px;
+        }
+        .map_p{
+            font-weight: bold;
+            font-family: 'Roboto';
+        }
+}
+.head_img{
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+}
+#menu{
+    margin-top: -100px;
+    width: 94%;
+    border-radius: 30px 30px 0 0;
+    background-color: #f6f6f6;
+    position: relative;
+    padding: 0 3% 0 3%;
+    padding-bottom: 70px;
+}
+.menu_head_titre{
+    display: flex;
+    justify-content: space-between;
+    width: 94%;
+    padding: 10% 3% 10% 3%;
+}
+.menu_grille_titre{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+        & h3{
+            font-family: 'Roboto';
+            font-weight: lighter;
+            margin: 0%;
+        }
+        #menu_barre1{
+            width: 50px;
+            height: 4px;
+            background: #99e2d0;
+            position: absolute;
+            z-index: 20;
+            top: 147px;
+        }
+        #menu_barre2{
+            width: 50px;
+            height: 4px;
+            background: #99e2d0;
+            position: absolute;
+            z-index: 20;
+            top: 482px;
+        }
+        #menu_barre3{
+            width: 50px;
+            height: 4px;
+            background: #99e2d0;
+            position: absolute;
+            z-index: 20;
+            top: 817px;
+        }
+}
+
+.menu_grille{
+    display: grid;
+    grid-gap: 15px;
+    margin-bottom: 20px;
+    .menu_grille_case{
+        width: 100%;
+        height: 70px;
+            .menu_plat_prix{
+                display: flex;
+                width: 94%;
+                padding: 0 3% 0 3%;
+                height: 70px;
+                justify-content: space-between;
+                align-items: center;
+                background-color: white;
+                border-radius: 20px;
+                font-family: 'Roboto';
+                box-shadow: 5px 5px 15px 5px rgb(0 0 0 / 10%);
+            }
+                .menu_plat{
+                    p:first-child{
+                        font-weight: bold;
+                    }
+                    p{
+                        margin: 5px;
+                    }
+
+
+                }
+                .menu_prix{
+                    display: flex;
+                    justify-content: flex-end;
+                    align-items: flex-end;
+                    width:30px;
+                    height: 75%;
+                    font-weight: bold;
+                }
+    }
+}
+.block{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: 50px;
+    margin-top: 40px;
+    .block_btn{
+        color: white;
+        width: 170px;
+        height: 48px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        font-family: 'Roboto';
+        background: linear-gradient(to top,#9356DC,#FF79DA);
+        border-radius: 25px 25px 25px 25px;
+}
+}
+
+#footer{
+    background-color: rgb(44, 44, 44);
+    color: white;
+    height: 180px;
+    padding-left: 25px;
+    padding-top: 15px;
+    display: grid;
+        .footer_titre{
+            font-weight: normal;
+            font-family: 'Shrikhand';
+        }
+        .footer_texte{
+            display: flex;
+            height: 20px;
+            margin: 0px;
+            font-family: 'Roboto';
+
+            .footer_logo{
+                width: 40px;
+                height: 20px;
+            }
+        }
+}
