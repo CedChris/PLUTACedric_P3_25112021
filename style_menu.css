@@ -71,39 +71,33 @@ p {
 }
 
 .menu_grille_titre {
-  width: 100%;
-  height: 60px;
+  width: 100px;
+  height: 35px;
+  margin-top: 10px;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
 }
 .menu_grille_titre h3 {
   font-family: "Roboto";
   font-weight: lighter;
-  margin: 0%;
+  margin-bottom: 5px;
 }
 .menu_grille_titre #menu_barre1 {
   width: 50px;
   height: 4px;
   background: #99e2d0;
-  position: absolute;
-  z-index: 20;
-  top: 147px;
 }
 .menu_grille_titre #menu_barre2 {
   width: 50px;
   height: 4px;
   background: #99e2d0;
-  position: absolute;
-  z-index: 20;
-  top: 482px;
 }
 .menu_grille_titre #menu_barre3 {
   width: 50px;
   height: 4px;
   background: #99e2d0;
-  position: absolute;
-  z-index: 20;
-  top: 817px;
 }
 
 .menu_grille {
@@ -176,11 +170,19 @@ p {
   font-weight: normal;
   font-family: "Shrikhand";
 }
+#footer #footer div a {
+  text-decoration: none;
+  color: white;
+}
 #footer .footer_texte {
   display: flex;
   height: 20px;
   margin: 0px;
   font-family: "Roboto";
+}
+#footer .footer_texte .footer_lien {
+  text-decoration: none;
+  color: white;
 }
 #footer .footer_texte .footer_logo {
   width: 40px;
