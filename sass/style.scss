@@ -39,7 +39,9 @@ a{
     align-items: center;
     border: 10px solid transparent;
     border-top: 10px solid #9356DC;
-    border-bottom: 10px solid #FF79DA;
+    border-left: 10px solid #9356DC;
+    border-right: 10px solid #9356DC;
+    border-color: linear-gradient(to top,#9356DC,#FF79DA);
     border-radius: 50%;
     width: 100px;
     height: 100px;
@@ -53,6 +55,34 @@ a{
     animation: spinner-border 2s linear;
     z-index: 10;
     visibility: hidden;
+}
+@keyframes spinner {
+    0% {
+      visibility: visible;
+      opacity: 0.9;
+    }
+    70% {
+      opacity: 0.9;
+    }
+    100% {
+      opacity: 0;
+      visibility: hidden;
+    }
+}
+@keyframes spinner-border {
+    0% {
+      visibility: visible;
+      opacity: 1;
+    }
+    70% {
+      opacity: 1;
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+              transform: rotate(360deg);
+      opacity: 0;
+      visibility: hidden;
+    }
 }
 #logo{
     display: flex;
@@ -96,13 +126,16 @@ a{
         .texte_btn{
             width: 50%;
             max-width: 190px;
-            background: linear-gradient(to left top,#9356DC,#FF79DA);
+            background: linear-gradient(to top,#9356DC,#FF79DA);
             border-radius: 25px 25px 25px 25px;
             color: white;
             text-align: center;
             font-family: 'Roboto';
-                .texte_btn:hover{
+            transition-duration: 500ms;
+            transition-property: transform;
+                &:hover{
                     cursor: pointer;
+                    box-shadow: 0px 0px 10px 0px rgb(0 0 0 / 40%);
                 }
         }
 
@@ -141,6 +174,17 @@ a{
             background-color:rgb(245, 244, 244);
             margin-left: 0px;
             border-radius: 20px 20px 20px 20px;
+            box-shadow: 0px 0px 10px 0px rgb(0 0 0 / 16%);
+            transform: scale(1);
+            transition-property: transform;
+            transition-duration: 400ms;
+                &:hover{
+                    transform: scale(1);
+                    transition: background-color 200ms linear;
+                    box-shadow: 0px 0px 10px 0px rgb(0 0 0 / 30%);
+                    background-color: white;
+                    cursor: pointer;
+                }
         }
         .menunav_btn_i{
             width: 50px;
@@ -157,9 +201,115 @@ a{
             padding-left: 20px;
             font-family: 'Roboto';
             text-decoration: none;
-            color: #7E7E7E;
+            color: black;
         }
 }
+main{
+    margin-top: 30px ;
+    background-color: #f6f6f6;
+        h2{
+            padding: 25px;
+            margin: 0%;
+        }
+}
+#restaurants{
+    width: 100%;
+    height: 1200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 20px;
+        .restaurants_carte{
+            width: 278px;
+            height: 280px;
+            text-decoration: none;
+            font-family: 'Roboto';
+            border-radius: 20px 20px 20px 20px;
+            box-shadow: 0px 0px 10px 0px rgb(0 0 0 / 30%);
+            transition-property: transform;
+            transition-duration: 400ms;
+                &:hover{
+                    transform: scale(1.10);
+                }
+        }
+        .restaurants_carte img{
+            width: 100%;
+            height: 190px;
+            border-radius: 20px 20px 0 0;
+            object-fit: cover;
+            position: absolute;
+        }
+        .restaurants_img_new{
+            position: relative;
+            z-index: 2;
+            color: #1b6150;
+            width: auto;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+        .restaurants_img{
+            position: relative;
+            width: 100%;
+            height: 190px;
+        }
+        .restaurants_texte{
+            width: 70%;
+            margin-left: 10px;
+        }
+        .restaurants_block{
+            width: 100%;
+            height: 90px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+                p{
+                    margin: 5px;
+                    color: black;
+                }
+                p:first-child{
+                    font-weight: bold;
+                }
+        }
+        .coeur{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 5px;
+            &_vide{
+                position: relative;
+                &:active{
+                    opacity: 0;
+                    transition: 0.5s;
+                }
+            }
+            &_plein{
+                position:absolute;
+                opacity: 0;
+                text-decoration: none;
+                display: inline-block; 
+                background-clip: text;
+                color: linear-gradient(to top,#9356DC,#FF79DA);
+                &:focus{
+                    opacity: 1;
+                    transition: 0.5s;
+                }
+            }
+        }
+}
+.restaurants_img_new p{
+    display: flex;
+        justify-content: center;
+        align-items: center;
+        width: auto;
+        background-color: #99e2d0;
+        width: 100px;
+        height: 35px;
+        margin-top: 20px;
+        margin-right: 20px;
+}
+
 footer{
     background-color: rgb(44, 44, 44);
     color: white;
@@ -198,87 +348,5 @@ footer{
                     color: white;
                 }
         }
-        }
-}
-main{
-    margin-top: 30px ;
-    background-color: #f6f6f6;
-        h2{
-            padding: 25px;
-            margin: 0%;
-        }
-}
-#restaurants{
-    width: 100%;
-    height: 1200px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    margin-bottom: 20px;
-        .restaurants_carte{
-            width: 278px;
-            height: 280px;
-            text-decoration: none;
-            font-family: 'Roboto';
-            border-radius: 20px 20px 20px 20px;
-            box-shadow: 0px 0px 10px 0px rgb(0 0 0 / 30%);
-        }
-        .restaurants_carte img{
-            width: 100%;
-            height: 190px;
-            border-radius: 20px 20px 0 0;
-            object-fit: cover;
-            position: absolute;
-        }
-        .restaurants_img_new{
-            position: relative;
-            z-index: 2;
-            color: #1b6150;
-            width: auto;
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-        }
-        .restaurants_img{
-            position: relative;
-            width: 100%;
-            height: 190px;
-        }
-        .restaurants_texte{
-            width: 70%;
-            margin-left: 10px;
-        }
-        .restaurants_block{
-            width: 100%;
-            height: 90px;
-            display: flex;
-            align-items: center;
-                p{
-                    margin: 5px;
-                    color: black;
-                }
-                p:first-child{
-                    font-weight: bold;
-                }
-        }
-        .restaurants_coeur{
-            display: flex;
-            width: 20%;
-            height: 60px;
-            justify-content: center;
-            align-items: center;
-            color: black;
-        }
-        .restaurants_img_new p{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: auto;
-            background-color: #99e2d0;
-            width: 100px;
-            height: 35px;
-            margin-top: 20px;
-            margin-right: 20px;
         }
 }
