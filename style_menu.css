@@ -14,16 +14,29 @@ body {
   margin: 0%;
 }
 
+@keyframes opacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 #logo {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
-  gap: 23%;
   height: 60px;
   width: 100%;
+  position: relative;
 }
 #logo i {
-  margin-left: 10px;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  left: 10px;
+  top: 0px;
 }
 
 p {
@@ -70,6 +83,31 @@ p {
   padding: 10% 3% 10% 3%;
 }
 
+.coeur {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.coeur_vide {
+  position: relative;
+}
+.coeur_vide:active {
+  opacity: 0;
+  transition: 0.5s;
+}
+.coeur_plein {
+  position: absolute;
+  opacity: 0;
+  text-decoration: none;
+  display: inline-block;
+  background-clip: text;
+  color: linear-gradient(to top, #9356DC, #FF79DA);
+}
+.coeur_plein:focus {
+  opacity: 1;
+  transition: 0.5s;
+}
+
 .menu_grille_titre {
   width: 100px;
   height: 35px;
@@ -107,12 +145,13 @@ p {
 }
 .menu_grille .menu_grille_case {
   width: 100%;
+  min-width: 330px;
   height: 70px;
+  padding: 0 1% 0 1%;
 }
 .menu_grille .menu_grille_case .menu_plat_prix {
   display: flex;
   width: 94%;
-  padding: 0 3% 0 3%;
   height: 70px;
   justify-content: space-between;
   align-items: center;
@@ -120,20 +159,90 @@ p {
   border-radius: 20px;
   font-family: "Roboto";
   box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.1);
+  animation: opacity 1s both;
+  position: relative;
+  overflow: hidden;
+}
+.menu_grille .menu_grille_case .menu_plat_prix:hover {
+  cursor: pointer;
+}
+.menu_grille .menu_grille_case .menu_plat_prix:hover .menu_validate {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: slide-left 0.5s ease;
+  transform-origin: right;
+}
+.menu_grille .menu_grille_case .menu_plat_prix .menu_validate {
+  display: none;
+  width: 30px;
+  position: absolute;
+  background: #99e2d0;
+  border-radius: 0 15px 15px 0;
+  right: 0px;
+  padding: 0 13px;
+  height: 100%;
+}
+.menu_grille .menu_grille_case .menu_plat_prix .menu_validate i {
+  font-size: 30px;
+  color: white;
+  transform: rotate(180deg);
+  animation: rotate 0.5s both;
+}
+.menu_grille .menu_grille_case .menu_plat_prix#case_1 {
+  animation-delay: 0.1s;
+}
+.menu_grille .menu_grille_case .menu_plat_prix#case_2 {
+  animation-delay: 0.2s;
+}
+.menu_grille .menu_grille_case .menu_plat_prix#case_3 {
+  animation-delay: 0.3s;
+}
+.menu_grille .menu_grille_case .menu_plat_prix#case_3bis {
+  animation-delay: 0.35s;
+}
+.menu_grille .menu_grille_case .menu_plat_prix#case_4 {
+  animation-delay: 0.4s;
+}
+.menu_grille .menu_grille_case .menu_plat_prix#case_5 {
+  animation-delay: 0.5s;
+}
+.menu_grille .menu_grille_case .menu_plat_prix#case_6 {
+  animation-delay: 0.6s;
+}
+.menu_grille .menu_grille_case .menu_plat_prix#case_7 {
+  animation-delay: 0.7s;
+}
+.menu_grille .menu_grille_case .menu_plat_prix#case_8 {
+  animation-delay: 0.8s;
+}
+.menu_grille .menu_grille_case .menu_plat_prix#case_9 {
+  animation-delay: 0.9s;
+}
+.menu_grille .menu_grille_case .menu_plat {
+  overflow: hidden;
+  white-space: nowrap;
+  padding-left: 5px;
 }
 .menu_grille .menu_grille_case .menu_plat p:first-child {
   font-weight: bold;
 }
 .menu_grille .menu_grille_case .menu_plat p {
-  margin: 5px;
+  margin: 2px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .menu_grille .menu_grille_case .menu_prix {
   display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
-  width: 30px;
-  height: 75%;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 100%;
   font-weight: bold;
+}
+.menu_grille .menu_grille_case:hover .menu_prix {
+  padding-right: 50px;
+  transition: 0.5s ease;
 }
 
 .block {
@@ -165,6 +274,7 @@ p {
   padding-left: 25px;
   padding-top: 15px;
   display: grid;
+  font-family: "Roboto";
 }
 #footer .footer_titre {
   font-weight: normal;
@@ -178,7 +288,6 @@ p {
   display: flex;
   height: 20px;
   margin: 0px;
-  font-family: "Roboto";
 }
 #footer .footer_texte .footer_lien {
   text-decoration: none;
@@ -187,6 +296,23 @@ p {
 #footer .footer_texte .footer_logo {
   width: 40px;
   height: 20px;
+}
+
+@keyframes slide-left {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(-50px);
+  }
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 /*# sourceMappingURL=style_menu.css.map */
