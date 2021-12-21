@@ -60,6 +60,10 @@ a {
   visibility: hidden;
 }
 
+.fa-heart {
+  color: black;
+}
+
 @keyframes spinner {
   0% {
     visibility: visible;
@@ -143,7 +147,9 @@ a {
 }
 #texte .texte_btn:hover {
   cursor: pointer;
-  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.4);
+  opacity: 0.8;
+  transition: 0.3s;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.6);
 }
 
 #menunav {
@@ -159,6 +165,14 @@ a {
   display: flex;
   justify-content: flex-start;
   width: 100%;
+}
+#menunav .menunav_btn-responsive {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 250px;
 }
 #menunav .menunav_num {
   width: 20px;
@@ -190,7 +204,7 @@ a {
   transform: scale(1);
   transition: background-color 200ms linear;
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
-  background-color: white;
+  background-color: rgba(147, 86, 220, 0.2);
   cursor: pointer;
 }
 #menunav .menunav_btn_i {
@@ -205,10 +219,15 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-weight: bold;
   padding-left: 20px;
   font-family: "Roboto";
   text-decoration: none;
   color: black;
+}
+
+.menunav_btn:hover .menunav_btn_i {
+  color: #9356DC;
 }
 
 main {
@@ -227,11 +246,14 @@ main h2 {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  margin-bottom: 20px;
+  padding-bottom: 20px;
+}
+#restaurants a {
+  width: 330px;
 }
 #restaurants .restaurants_carte {
-  width: 278px;
-  height: 280px;
+  width: 330px;
+  height: 275px;
   text-decoration: none;
   font-family: "Roboto";
   border-radius: 20px 20px 20px 20px;
@@ -240,11 +262,12 @@ main h2 {
   transition-duration: 400ms;
 }
 #restaurants .restaurants_carte:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
+  box-shadow: 0px 0px 10px 2px rgba(147, 86, 220, 0.6);
 }
 #restaurants .restaurants_carte img {
   width: 100%;
-  height: 190px;
+  height: 200px;
   border-radius: 20px 20px 0 0;
   object-fit: cover;
   position: absolute;
@@ -253,6 +276,7 @@ main h2 {
   position: relative;
   z-index: 2;
   color: #1b6150;
+  font-weight: bold;
   width: auto;
   display: flex;
   justify-content: flex-end;
@@ -281,28 +305,35 @@ main h2 {
 #restaurants .restaurants_block p:first-child {
   font-weight: bold;
 }
-#restaurants .coeur {
+
+.fa-heart {
+  display: inline-block;
+}
+
+.coeur {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-right: 5px;
+  margin-right: 15px;
 }
-#restaurants .coeur_vide {
+.coeur_vide {
   position: relative;
+  opacity: 1;
 }
-#restaurants .coeur_vide:active {
+.coeur_vide:hover {
   opacity: 0;
   transition: 0.5s;
 }
-#restaurants .coeur_plein {
+.coeur_plein {
   position: absolute;
   opacity: 0;
   text-decoration: none;
   display: inline-block;
-  background-clip: text;
-  color: linear-gradient(to top, #9356DC, #FF79DA);
+  background: -webkit-linear-gradient(#9356DC, #FF79DA);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
-#restaurants .coeur_plein:focus {
+.coeur_plein:hover {
   opacity: 1;
   transition: 0.5s;
 }
@@ -358,6 +389,53 @@ footer .footer_texte .footer_aide {
 footer .footer_texte .footer_aide .footer_aide a {
   text-decoration: none;
   color: white;
+}
+
+@media screen and (min-width: 900px) {
+  #menunav {
+    display: flex;
+    height: 200px;
+  }
+  #menunav .menunav_btn-responsive {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    flex-direction: row;
+    margin-left: -20px;
+  }
+  #menunav .menunav_btn-responsive .menunav_btn {
+    max-width: 450px;
+    margin: 0 10px 0 10px;
+  }
+  #menunav .menunav_btn-responsive .menunav_titre h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  main h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #restaurants {
+    width: 100%;
+    height: 650px;
+    display: grid;
+    align-items: center;
+    margin: 20px 0 0 0;
+    justify-content: center;
+    grid-template-columns: 330px 330px;
+    grid-gap: 20px;
+    grid-template-rows: 280px 280px;
+  }
+
+  footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
