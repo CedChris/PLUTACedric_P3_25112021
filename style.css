@@ -226,7 +226,7 @@ a {
   color: black;
 }
 
-.menunav_btn:hover .menunav_btn_i {
+.menunav_btn:hover > .menunav_btn_i i {
   color: #9356DC;
 }
 

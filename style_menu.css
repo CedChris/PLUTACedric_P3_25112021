@@ -122,7 +122,7 @@ p {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-.coeur_plein:focus {
+.coeur_plein:hover {
   opacity: 1;
   transition: 0.5s;
 }
@@ -159,6 +159,7 @@ p {
 
 .menu_grille {
   display: grid;
+  width: 100%;
   grid-gap: 15px;
   margin-bottom: 20px;
 }
@@ -349,7 +350,6 @@ p {
 
   .menu_grille_case {
     width: 100%;
-    max-width: 330px;
     height: 70px;
     padding: 0 1% 0 1%;
   }
