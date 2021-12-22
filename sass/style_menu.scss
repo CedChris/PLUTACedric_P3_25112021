@@ -146,6 +146,7 @@ p{
 
 .menu_grille{
     display: grid;
+    width: 100%;
     grid-gap: 15px;
     margin-bottom: 20px;
     .menu_grille_case{
@@ -335,7 +336,6 @@ p{
     }
     .menu_grille_case{
         width: 100%;
-        max-width: 330px;
         height: 70px;
         padding: 0 1% 0 1%;
     }
