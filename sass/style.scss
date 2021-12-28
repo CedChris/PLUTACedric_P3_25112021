@@ -378,7 +378,7 @@ footer{
         }
         }
 }
-@media screen and (min-width: 900px){
+@media screen and (min-width: 768px){
     #menunav{
         display: flex;
         height: 200px;
@@ -398,6 +398,9 @@ footer{
             justify-content: center;
             align-items: center;
         }
+    }
+    .menunav_btn:active{
+        outline-style: none;
     }
     }
     main h2{
