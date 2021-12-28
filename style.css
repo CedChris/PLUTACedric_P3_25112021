@@ -391,7 +391,7 @@ footer .footer_texte .footer_aide .footer_aide a {
   color: white;
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 768px) {
   #menunav {
     display: flex;
     height: 200px;
@@ -411,6 +411,9 @@ footer .footer_texte .footer_aide .footer_aide a {
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+  #menunav .menunav_btn:active {
+    outline-style: none;
   }
 
   main h2 {
