@@ -17,6 +17,10 @@ body{
     justify-content: center;
     align-items: center;
 }
+a{
+    text-decoration: none;
+    color: white;
+}
 @keyframes opacity{
     0%{
         opacity: 0;
@@ -190,7 +194,6 @@ p{
                         i{
                             font-size: 30px;
                             color: white;
-                            transform: rotate(180deg);
                             animation: rotate 0.5s both;
                         }
                     }
@@ -294,10 +297,6 @@ p{
         .footer_titre{
             font-weight: normal;
             font-family: 'Shrikhand';
-        }
-        #footer div a{
-            text-decoration: none;
-            color: white;
         }
         .footer_texte{
             display: flex;
