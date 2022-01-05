@@ -20,6 +20,11 @@ body {
   align-items: center;
 }
 
+a {
+  text-decoration: none;
+  color: white;
+}
+
 @keyframes opacity {
   0% {
     opacity: 0;
@@ -207,7 +212,6 @@ p {
 .menu_grille .menu_grille_case .menu_plat_prix .menu_validate i {
   font-size: 30px;
   color: white;
-  transform: rotate(180deg);
   animation: rotate 0.5s both;
 }
 .menu_grille .menu_grille_case .menu_plat_prix#case_1 {
@@ -307,10 +311,6 @@ p {
 #footer .footer_titre {
   font-weight: normal;
   font-family: "Shrikhand";
-}
-#footer #footer div a {
-  text-decoration: none;
-  color: white;
 }
 #footer .footer_texte {
   display: flex;
